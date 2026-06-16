@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+# Note: Keep dist/ tracked in git for GitHub Actions to work!
+#!dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local

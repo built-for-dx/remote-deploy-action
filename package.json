@@ -1,0 +1,17 @@
+{
+  "name": "remote-deploy-action",
+  "version": "1.0.0",
+  "description": "Secure SCP and SSH deployment GitHub Action",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "ncc build deploy.js -o dist --minify --license LICENSE"
+  },
+  "dependencies": {
+    "@actions/core": "^3.0.0",
+    "@actions/glob": "^0.4.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.0"
+  }
+}

@@ -1,0 +1,53 @@
+name: "Remote SSH Deploy Action"
+description: "SCP files and execute remote SSH commands with support for proxy/jump host and private key files/secrets"
+author: "build-for-ex"
+branding:
+  icon: "terminal"
+  color: "blue"
+
+inputs:
+  host:
+    description: "Target SSH host address"
+    required: true
+  username:
+    description: "Target SSH username"
+    required: true
+  port:
+    description: "Target SSH port"
+    required: false
+    default: "22"
+  key:
+    description: "Target SSH private key content (e.g. from secrets)"
+    required: false
+  key_path:
+    description: "Target SSH private key path on the runner"
+    required: false
+  source:
+    description: "Local source files/folders to copy via SCP"
+    required: false
+  target:
+    description: "Target directory on the remote host for SCP copy"
+    required: false
+  script:
+    description: "Multi-line shell script to run on the target host"
+    required: false
+  proxy_host:
+    description: "Proxy/jump host address"
+    required: false
+  proxy_username:
+    description: "Proxy/jump host SSH username"
+    required: false
+  proxy_port:
+    description: "Proxy/jump host SSH port"
+    required: false
+    default: "22"
+  proxy_key:
+    description: "Proxy/jump host SSH private key content (e.g. from secrets)"
+    required: false
+  proxy_key_path:
+    description: "Target SSH private key path on the proxy/jump host"
+    required: false
+
+runs:
+  using: "node24"
+  main: "dist/index.js"
